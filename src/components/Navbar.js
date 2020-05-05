@@ -31,7 +31,9 @@ const Navbar = () => {
       <AppBar position="static" className={classes.appBar}>
         <Toolbar className="nav-container">
           <div className={classes.logoContainer}>
-            <Typography variant="h6">Kristen Anckers</Typography>
+            <Link to="/landing-page">
+              <Typography variant="h6">Kristen Anckers</Typography>
+            </Link>
           </div>
 
           {authenticated ? null : (
