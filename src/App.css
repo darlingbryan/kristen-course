@@ -13,7 +13,14 @@ body {
 .nav-container {
   width: 90%;
   margin: auto;
+  padding: 10px 0;
   background-color: orange;
+}
+
+@media only screen and (max-width: 600px) {
+  #homeLogo {
+    align-items: center;
+  }
 }
 a,
 a:active,

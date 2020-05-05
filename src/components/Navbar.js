@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 import { Link } from "react-router-dom"
 import { CourseContext } from "../context/CourseState"
+import { Grid } from "@material-ui/core"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,9 +15,7 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: "orange",
   },
-  logoContainer: {
-    flex: "1 1 40rem",
-  },
+  logoContainer: {},
   logoText: {
     fontFamily: "'Dancing Script', cursive",
   },
@@ -25,13 +24,10 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "'Halant', serif",
   },
 
-  links: {
-    flex: "1 1 40rem",
-  },
+  links: {},
   login: {
-    flex: "1 1 40rem",
-    color: "white",
-    backgroundColor: "#444",
+    color: "#333",
+    backgroundColor: "peru",
   },
 }))
 
@@ -42,21 +38,34 @@ const Navbar = () => {
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
         <Toolbar className="nav-container">
-          <div className={classes.logoContainer}>
-            <Link to="/">
-              <Typography variant="h4" className={classes.logoText}>
-                Kristen Anckers <span className={classes.ext}>MS Ed.</span>
-              </Typography>
-            </Link>
-          </div>
+          <Grid container>
+            <Grid item className={classes.logoContainer} sm={8}>
+              <Link to="/">
+                <Typography
+                  variant="h4"
+                  className={classes.logoText}
+                  id="homeLogo"
+                >
+                  Kristen Anckers <span className={classes.ext}>MS Ed.</span>
+                </Typography>
+              </Link>
+            </Grid>
 
-          {authenticated ? null : (
-            <>
-              <Button component={Link} className={classes.login} to="/auth">
-                Already have access code? Click here to watch the series!
-              </Button>
-            </>
-          )}
+            {authenticated ? null : (
+              <Grid item sm={4}>
+                <Button
+                  component={Link}
+                  className={classes.login}
+                  to="/auth"
+                  align="center"
+                >
+                  <Typography>
+                    Already have access code? Click here to watch the series!
+                  </Typography>
+                </Button>
+              </Grid>
+            )}
+          </Grid>
         </Toolbar>
       </AppBar>
     </div>
