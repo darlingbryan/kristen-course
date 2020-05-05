@@ -14,7 +14,7 @@ export default [
   {
     title: "Routines",
     step: 3,
-    videoUrl: "https://www.youtube.com/embed/bxhDpT3G__c",
+    videoUrl: "https://www.youtube.com/embed/msCVqvtBpOY",
     pdfUrl: "",
   },
   {
@@ -26,7 +26,7 @@ export default [
   {
     title: "Communication",
     step: 5,
-    videoUrl: "https://www.youtube.com/embed/bxhDpT3G__c",
+    videoUrl: "https://www.youtube.com/embed/na2deeovHn8",
     pdfUrl: "",
   },
   {

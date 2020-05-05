@@ -5,8 +5,25 @@ import Typography from "@material-ui/core/Typography"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 import { CourseContext } from "../context/CourseState"
+import { makeStyles } from "@material-ui/core/styles"
+
+const useStyles = makeStyles((theme) => ({
+  passcodeSubmit: {
+    marginTop: "30px",
+    background: "orange",
+    padding: "20px",
+    "&:hover": {
+      background: "peru",
+    },
+  },
+  authSection: {
+    height: "80vh",
+    alignItems: "center",
+  },
+}))
 
 const Auth = ({ history }) => {
+  const classes = useStyles()
   const { authenticateUser, errors, loading } = useContext(CourseContext)
   console.log(errors)
 
@@ -32,10 +49,12 @@ const Auth = ({ history }) => {
   }
 
   return (
-    <Grid container>
+    <Grid container className={classes.authSection}>
       <Grid item sm />
       <Grid item sm>
-        <Typography variant="h2">Enter Your PassCode</Typography>
+        <Typography variant="h3" align="center">
+          Enter Your Passcode
+        </Typography>
         <form noValidate onSubmit={handleSubmit}>
           <TextField
             id="user"
@@ -74,8 +93,9 @@ const Auth = ({ history }) => {
           <Button
             type="submit"
             variant="contained"
-            color="primary"
+            className={classes.passcodeSubmit}
             disabled={loading}
+            fullWidth
           >
             Enter Course
           </Button>

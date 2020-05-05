@@ -7,20 +7,34 @@ import Course from "./pages/course.js"
 import Navbar from "./components/Navbar"
 import CourseState from "./context/CourseState"
 import PrivateRoute from "./components/PrivateRoute"
+import { ThemeProvider } from "@material-ui/core"
+import { createMuiTheme } from "@material-ui/core/styles"
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      // '"Dancing Script", cursive',
+      '"Halant", serif',
+      '"Nunito Sans", sans-serif',
+    ].join(","),
+  },
+})
 
 function App() {
   return (
     <CourseState>
-      <div className="App">
-        <Router>
-          <Navbar />
-          <Switch>
-            <Route exact path="/landing-page" component={Home} />
-            <Route exact path="/auth" component={Auth} />
-            <PrivateRoute exact path="/" component={Course} />
-          </Switch>
-        </Router>
-      </div>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <Router>
+            <Navbar />
+            <Switch>
+              <Route exact path="/landing-page" component={Home} />
+              <Route exact path="/auth" component={Auth} />
+              <PrivateRoute exact path="/" component={Course} />
+            </Switch>
+          </Router>
+        </div>
+      </ThemeProvider>
     </CourseState>
   )
 }

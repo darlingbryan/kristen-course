@@ -1,3 +1,18 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+
+
+Landing page is under contruction. Login to view the video series.
+
+To add in this in landingpage
+
+details on the video series
+paypal link
+passcode instruction
+social media links
+More todos
+
+improve design
+a feature to notify Kristen when someone access the course.
+add a facebook chat?

@@ -21,6 +21,11 @@ const useStyles = makeStyles((theme) => ({
   links: {
     flex: "1 1 40rem",
   },
+  login: {
+    flex: "1 1 40rem",
+    color: "white",
+    backgroundColor: "#444",
+  },
 }))
 
 const Navbar = () => {
@@ -32,19 +37,16 @@ const Navbar = () => {
         <Toolbar className="nav-container">
           <div className={classes.logoContainer}>
             <Link to="/landing-page">
-              <Typography variant="h6">Kristen Anckers</Typography>
+              <Typography variant="h6" className={classes.logo}>
+                Kristen Anckers <span>MS Ed.</span>
+              </Typography>
             </Link>
           </div>
 
           {authenticated ? null : (
             <>
-              <Button
-                color="inherit"
-                component={Link}
-                className={classes.links}
-                to="/auth"
-              >
-                Login
+              <Button component={Link} className={classes.login} to="/auth">
+                Already have access code? Click here to watch the series!
               </Button>
             </>
           )}

@@ -27,9 +27,6 @@ const useStyles = makeStyles((theme) => ({
     flex: "1 1 40rem",
   },
 
-  links: {
-    flex: "1 1 40rem",
-  },
   media: {
     height: 140,
   },
