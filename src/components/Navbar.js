@@ -34,26 +34,8 @@ const Navbar = () => {
             <Typography variant="h6">Kristen Anckers</Typography>
           </div>
 
-          {authenticated ? (
-            <Button
-              color="inherit"
-              component={Link}
-              className={classes.links}
-              to="/course"
-            >
-              Course
-            </Button>
-          ) : (
+          {authenticated ? null : (
             <>
-              <Button
-                color="inherit"
-                component={Link}
-                className={classes.links}
-                to="/"
-              >
-                Home
-              </Button>
-
               <Button
                 color="inherit"
                 component={Link}
