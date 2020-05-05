@@ -6,7 +6,7 @@ export default (state, action) => {
       return {
         ...state,
         user: action.payload,
-        authenticated: false,
+        authenticated: true,
         errors: {},
       }
     case SET_ERRORS:

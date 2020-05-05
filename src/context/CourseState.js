@@ -8,8 +8,8 @@ const CourseContext = createContext()
 const CourseState = (props) => {
   const initialState = {
     user: null,
-    authenticated: true,
-    currentCourseIndex: 1,
+    authenticated: false,
+    currentCourseIndex: 0,
     errors: [],
   }
 
@@ -23,7 +23,7 @@ const CourseState = (props) => {
         type: AUTHENTICATE_USER,
         payload: user,
       })
-      history.push("/course")
+      history.push("/")
     } else {
       dispatch({
         type: SET_ERRORS,
