@@ -23,7 +23,7 @@ const CourseState = (props) => {
         type: AUTHENTICATE_USER,
         payload: user,
       })
-      history.push("/")
+      history.push("/course")
     } else {
       dispatch({
         type: SET_ERRORS,

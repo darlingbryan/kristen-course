@@ -28,9 +28,9 @@ function App() {
           <Router>
             <Navbar />
             <Switch>
-              <Route exact path="/landing-page" component={Home} />
+              <Route exact path="/" component={Home} />
               <Route exact path="/auth" component={Auth} />
-              <PrivateRoute exact path="/" component={Course} />
+              <PrivateRoute exact path="/course" component={Course} />
             </Switch>
           </Router>
         </div>

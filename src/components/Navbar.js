@@ -17,6 +17,13 @@ const useStyles = makeStyles((theme) => ({
   logoContainer: {
     flex: "1 1 40rem",
   },
+  logoText: {
+    fontFamily: "'Dancing Script', cursive",
+  },
+  ext: {
+    fontSize: "16px",
+    fontFamily: "'Halant', serif",
+  },
 
   links: {
     flex: "1 1 40rem",
@@ -36,9 +43,9 @@ const Navbar = () => {
       <AppBar position="static" className={classes.appBar}>
         <Toolbar className="nav-container">
           <div className={classes.logoContainer}>
-            <Link to="/landing-page">
-              <Typography variant="h6" className={classes.logo}>
-                Kristen Anckers <span>MS Ed.</span>
+            <Link to="/">
+              <Typography variant="h4" className={classes.logoText}>
+                Kristen Anckers <span className={classes.ext}>MS Ed.</span>
               </Typography>
             </Link>
           </div>
