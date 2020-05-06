@@ -8,7 +8,7 @@ const CourseContext = createContext()
 const CourseState = (props) => {
   const initialState = {
     user: null,
-    authenticated: true,
+    authenticated: false,
     currentCourseIndex: 0,
     errors: [],
   }
