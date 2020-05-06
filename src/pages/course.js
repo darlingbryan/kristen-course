@@ -14,13 +14,16 @@ import data from "../data"
 import CourseList from "../components/CourseList"
 
 const useStyles = makeStyles((theme) => ({
+  courseContainer: {
+    padding: "20px 10px",
+  },
   levels: {
     flexGrow: 1,
   },
   actionButtons: {
-    backgroundColor: "orange",
+    backgroundColor: "#f38b06",
     "&:hover": {
-      backgroundColor: "peru",
+      backgroundColor: "#f7941d",
     },
   },
   videoContainer: {
@@ -59,7 +62,7 @@ const Course = () => {
   }
 
   return (
-    <Grid container>
+    <Grid container className={classes.courseContainer}>
       <Grid item sm={8} className={classes.videoContainer}>
         <Card className={classes.root}>
           <CardActionArea>

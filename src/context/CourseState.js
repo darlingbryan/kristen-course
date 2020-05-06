@@ -8,7 +8,7 @@ const CourseContext = createContext()
 const CourseState = (props) => {
   const initialState = {
     user: null,
-    authenticated: false,
+    authenticated: true,
     currentCourseIndex: 0,
     errors: [],
   }
@@ -16,7 +16,7 @@ const CourseState = (props) => {
   const [state, dispatch] = useReducer(courseReducer, initialState)
 
   const authenticateUser = (data, history) => {
-    const { user, email, passcode } = data
+    const { user, passcode } = data
     const code = "kristen"
     if (passcode === code) {
       dispatch({
@@ -42,6 +42,13 @@ const CourseState = (props) => {
     })
   }
 
+  const setErrors = (errors) => {
+    dispatch({
+      type: SET_ERRORS,
+      payload: errors,
+    })
+  }
+
   return (
     <CourseContext.Provider
       value={{
@@ -51,6 +58,7 @@ const CourseState = (props) => {
         authenticated: state.authenticated,
         authenticateUser,
         setCourse,
+        setErrors,
       }}
     >
       {props.children}

@@ -18,10 +18,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   current: {
-    backgroundColor: "orange",
+    backgroundColor: "#f38b06",
   },
   completed: {
-    backgroundColor: "peru",
+    backgroundColor: "#f7941d",
   },
 }))
 

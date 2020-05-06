@@ -6,14 +6,16 @@ import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 import { CourseContext } from "../context/CourseState"
 import { makeStyles } from "@material-ui/core/styles"
+import axios from "axios"
+import { validateAuth } from "../utils/validate"
 
 const useStyles = makeStyles((theme) => ({
   passcodeSubmit: {
     marginTop: "30px",
-    background: "orange",
+    background: "#f38b06",
     padding: "20px",
     "&:hover": {
-      background: "peru",
+      background: "#f7941d",
     },
   },
   authSection: {
@@ -24,14 +26,27 @@ const useStyles = makeStyles((theme) => ({
 
 const Auth = ({ history }) => {
   const classes = useStyles()
-  const { authenticateUser, errors, loading } = useContext(CourseContext)
+  const { authenticateUser, errors, setErrors } = useContext(CourseContext)
   console.log(errors)
 
   const [passcode, setPasscode] = useState("")
   const [email, setEmail] = useState("")
   const [user, setUser] = useState("")
+  const [serverState, setServerState] = useState({
+    submitting: false,
+    status: null,
+  })
+  const handleServerResponse = (ok, msg, form) => {
+    setServerState({
+      submitting: false,
+      status: { ok, msg },
+    })
+    if (ok) {
+      form.reset()
+    }
+  }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const userData = {
       passcode,
@@ -39,13 +54,31 @@ const Auth = ({ history }) => {
       user,
     }
 
-    console.log("check passcode")
-    //set loading
-    //validate data
-    authenticateUser(userData, history)
+    //Validate data
+    const { errors, valid } = validateAuth(email, user)
+
+    if (valid) {
+      //Notify Kristen
+      const form = e.target
+      setServerState({ submitting: true })
+      await axios({
+        method: "post",
+        url: "https://formspree.io/mjvavppg",
+        data: new FormData(form),
+      })
+        .then((r) => {
+          handleServerResponse(true, "Thanks!", form)
+        })
+        .catch((r) => {
+          handleServerResponse(false, "failed", form)
+        })
+
+      authenticateUser(userData, history)
+    } else {
+      setErrors(errors)
+    }
 
     //set errors
-    //set loading finish
   }
 
   return (
@@ -61,8 +94,8 @@ const Auth = ({ history }) => {
             name="user"
             type="text"
             label="User"
-            helperText={errors.name}
-            error={errors.email ? true : false}
+            helperText={errors.user}
+            error={errors.user ? true : false}
             value={user}
             onChange={(e) => setUser(e.target.value)}
             fullWidth
@@ -94,11 +127,16 @@ const Auth = ({ history }) => {
             type="submit"
             variant="contained"
             className={classes.passcodeSubmit}
-            disabled={loading}
             fullWidth
+            disabled={serverState.submitting}
           >
             Enter Course
           </Button>
+          {serverState.status && (
+            <p className={!serverState.status.ok ? "errorMsg" : ""}>
+              {serverState.status.msg}
+            </p>
+          )}
         </form>
       </Grid>
       <Grid item sm />

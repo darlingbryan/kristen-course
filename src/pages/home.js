@@ -15,13 +15,17 @@ const useStyles = makeStyles((theme) => ({
   },
   purchaseButton: {
     marginTop: "30px",
-    background: "orange",
+    background: "#f38b06",
+    padding: "24px 0",
     "&:hover": {
-      background: "peru",
+      background: "#f7941d",
     },
   },
   headTextContainer: {
     padding: 0,
+  },
+  textContainer: {
+    paddingLeft: "16px",
   },
   text: {
     fontFamily: '"Nunito Sans", sans-serif',
@@ -39,12 +43,12 @@ const Home = () => {
         spacing={5}
       >
         <Grid item sm={12} className={classes.headTextContainer}>
-          <Typography variant="h3" align="center" display="block">
+          <Typography variant="h3" align="center">
             Parenting Video Series
           </Typography>
         </Grid>
         <Grid item sm={6}>
-          <Paper>
+          <Paper elevation={false}>
             <img
               src={ParentImage}
               className={classes.homeImage}
@@ -54,16 +58,18 @@ const Home = () => {
         </Grid>
         <Grid item sm={6}>
           <Typography variant="h5">The Kids are Home Now What?</Typography>
-          <Typography variant="p" className={classes.text}>
-            Let’s face it; parenting is challenging, and we don’t always have
-            the tools that work, I needed more tools. What I found is, you never
-            will have all the answers, you will never feel “all good” all the
-            time, all we can do is try our best and be kind to ourselves through
-            this messy process of parenting.
-          </Typography>
+          <div className={classes.textContainer}>
+            <Typography variant="p" className={classes.text}>
+              Let’s face it; parenting is challenging, and we don’t always have
+              the tools that work, I needed more tools. What I found is, you
+              never will have all the answers, you will never feel “all good”
+              all the time, all we can do is try our best and be kind to
+              ourselves through this messy process of parenting.
+            </Typography>
+          </div>
 
-          <Button className={classes.purchaseButton} fullWidth size="large">
-            Buy Now $27 Video Series
+          <Button className={classes.purchaseButton} fullWidth>
+            <Typography variant="h5">Buy Now $27 Video Series</Typography>
           </Button>
         </Grid>
       </Grid>
