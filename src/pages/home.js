@@ -2,13 +2,14 @@ import React from "react"
 import { Grid, Typography, Paper, Container, Button } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import ParentImage from "../assets/parents.jpg"
+import AskKristen from "../components/AskKristen"
 
 const useStyles = makeStyles((theme) => ({
   mainSection: {
     margin: "auto",
     paddingTop: "50px",
-    height: "90vh",
   },
+
   homeImage: {
     objectFit: "cover",
     maxWidth: "100%",
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   headTextContainer: {
-    padding: 0,
+    paddingBottom: "20px",
   },
   textContainer: {
     paddingLeft: "16px",
@@ -35,19 +36,20 @@ const useStyles = makeStyles((theme) => ({
 const Home = () => {
   const classes = useStyles()
   return (
-    <Container maxWidth="md">
+    <>
       <Grid
         container
         className={classes.mainSection}
+        direction="row"
         justify="center"
-        spacing={5}
+        alignItems="center"
       >
         <Grid item sm={12} className={classes.headTextContainer}>
           <Typography variant="h3" align="center">
             Parenting Video Series
           </Typography>
         </Grid>
-        <Grid item sm={6}>
+        <Grid item sm={6} className="padMeLeft">
           <Paper elevation={false}>
             <img
               src={ParentImage}
@@ -56,7 +58,7 @@ const Home = () => {
             />
           </Paper>
         </Grid>
-        <Grid item sm={6}>
+        <Grid item sm={6} className="padMeRight">
           <Typography variant="h5">The Kids are Home Now What?</Typography>
           <div className={classes.textContainer}>
             <Typography variant="p" className={classes.text}>
@@ -76,7 +78,9 @@ const Home = () => {
       <Grid container className={classes.author}>
         <Grid item></Grid>
       </Grid>
-    </Container>
+
+      <AskKristen />
+    </>
   )
 }
 

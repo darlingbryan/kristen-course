@@ -15,21 +15,13 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: "#f38b06",
   },
-  logoContainer: {
-    margin: "auto 0",
-  },
-  logoText: {
-    fontFamily: "'Dancing Script', cursive",
+  navButton: {
+    color: "black",
+    backgroundColor: "white",
   },
   ext: {
     fontSize: "16px",
     fontFamily: "'Halant', serif",
-  },
-
-  links: {},
-  login: {
-    color: "black",
-    backgroundColor: "white",
   },
 }))
 
@@ -41,23 +33,20 @@ const Navbar = () => {
       <AppBar position="static" className={classes.appBar}>
         <Toolbar className="nav-container">
           <Grid container>
-            <Grid item className={classes.logoContainer} sm={8}>
+            <Grid item className="logoContainer" sm={8} xs={12}>
               <Link to="/">
-                <Typography
-                  variant="h4"
-                  className={classes.logoText}
-                  id="homeLogo"
-                >
+                <Typography variant="h4" className="logoText">
                   Kristen Ancker <span className={classes.ext}>MS Ed.</span>
                 </Typography>
               </Link>
             </Grid>
 
             {authenticated ? (
-              <Grid item sm={4}>
+              <Grid item sm={4} xs={12} className="buttonContainer">
                 <Button
                   component={Link}
-                  className={classes.login}
+                  className={classes.navButton}
+                  id="navButtonId"
                   to="/course"
                   align="center"
                   fullWidth
@@ -68,10 +57,10 @@ const Navbar = () => {
                 </Button>
               </Grid>
             ) : (
-              <Grid item sm={4}>
+              <Grid item sm={4} className="buttonContainer">
                 <Button
                   component={Link}
-                  className={classes.login}
+                  className="navButton"
                   to="/auth"
                   align="center"
                   fullWidth
