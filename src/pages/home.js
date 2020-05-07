@@ -1,5 +1,5 @@
 import React from "react"
-import { Grid, Typography, Paper, Container, Button } from "@material-ui/core"
+import { Grid, Typography, Paper } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import ParentImage from "../assets/parents.jpg"
 import AskKristen from "../components/AskKristen"
@@ -69,14 +69,36 @@ const Home = () => {
               ourselves through this messy process of parenting.
             </Typography>
           </div>
-
-          <Button className={classes.purchaseButton} fullWidth>
-            <Typography variant="h5">Buy Now $27 Video Series</Typography>
-          </Button>
+          <div className="paypal-button">
+            <form
+              action="https://www.paypal.com/cgi-bin/webscr"
+              method="post"
+              target="_top"
+              style={{ display: "inline-block" }}
+            >
+              <input type="hidden" name="cmd" value="_s-xclick" />
+              <input
+                type="hidden"
+                name="hosted_button_id"
+                value="KPCN82VW5SRD2"
+              />
+              <input
+                type="image"
+                src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
+                border="0"
+                name="submit"
+                alt="PayPal - The safer, easier way to pay online!"
+              />
+              <img
+                alt=""
+                border="0"
+                src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"
+                width="1"
+                height="1"
+              />
+            </form>
+          </div>
         </Grid>
-      </Grid>
-      <Grid container className={classes.author}>
-        <Grid item></Grid>
       </Grid>
 
       <AskKristen />

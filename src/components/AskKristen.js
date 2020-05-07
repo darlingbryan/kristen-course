@@ -12,9 +12,9 @@ const AskKristen = () => {
         alignItems="center"
         style={{ marginTop: "50px" }}
       >
-        <Grid item sm={4} id="contact">
+        <Grid item sm={6} id="contact">
           <Typography
-            variant="h6"
+            variant="h4"
             align="center"
             display="block"
             style={{ fontFamily: "'Dancing Script', cursive" }}

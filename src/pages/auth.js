@@ -88,7 +88,7 @@ const Auth = ({ history }) => {
         <Typography variant="h3" align="center">
           Enter Your Passcode
         </Typography>
-        <form noValidate onSubmit={handleSubmit}>
+        <form noValidate onSubmit={handleSubmit} className="authForm">
           <TextField
             id="user"
             name="user"

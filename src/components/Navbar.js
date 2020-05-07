@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import { Link } from "react-router-dom"
 import { CourseContext } from "../context/CourseState"
 import { Grid } from "@material-ui/core"
+import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,8 +17,21 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#f38b06",
   },
   navButton: {
-    color: "black",
     backgroundColor: "white",
+    color: "black",
+    "&:hover": {
+      backgroundColor: "#f7941d",
+      color: "white",
+    },
+  },
+  iconButton: {
+    color: "inherit !important",
+    "&:hover": {
+      color: "inherit !important",
+    },
+  },
+  navButtonText: {
+    color: "inherit !important",
   },
   ext: {
     fontSize: "16px",
@@ -35,7 +49,7 @@ const Navbar = () => {
           <Grid container>
             <Grid item className="logoContainer" sm={8} xs={12}>
               <Link to="/">
-                <Typography variant="h4" className="logoText">
+                <Typography variant="h3" className="logoText">
                   Kristen Ancker <span className={classes.ext}>MS Ed.</span>
                 </Typography>
               </Link>
@@ -44,28 +58,40 @@ const Navbar = () => {
             {authenticated ? (
               <Grid item sm={4} xs={12} className="buttonContainer">
                 <Button
+                  variant="contained"
                   component={Link}
                   className={classes.navButton}
-                  id="navButtonId"
                   to="/course"
                   align="center"
                   fullWidth
+                  size="large"
+                  endIcon={
+                    <PlayCircleOutlineIcon className={classes.iconButton} />
+                  }
                 >
-                  <Typography style={{ color: "black", padding: "15px 0" }}>
+                  <Typography variant="h6" className={classes.navButtonText}>
                     Welcome to the Series!
                   </Typography>
                 </Button>
               </Grid>
             ) : (
-              <Grid item sm={4} className="buttonContainer">
+              <Grid item sm={4} xs={12} className="buttonContainer">
                 <Button
+                  variant="contained"
                   component={Link}
-                  className="navButton"
+                  className={classes.navButton}
                   to="/auth"
                   align="center"
                   fullWidth
+                  size="large"
+                  endIcon={
+                    <PlayCircleOutlineIcon className={classes.iconButton} />
+                  }
                 >
-                  <Typography style={{ color: "black" }}>
+                  <Typography
+                    variant="heading"
+                    className={classes.navButtonText}
+                  >
                     Already have access code? <br />
                     Click here to watch the series!
                   </Typography>

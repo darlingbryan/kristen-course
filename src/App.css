@@ -22,10 +22,7 @@ body {
 }
 
 .logoContainer {
-  padding-top: 15px;
-}
-
-.buttonContainer {
+  padding-top: 10px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -37,6 +34,9 @@ body {
   }
   #navButtonId {
     color: green;
+  }
+  .authForm {
+    padding: 0 20px;
   }
 }
 a,
@@ -74,4 +74,10 @@ a:visited {
   .padMeLeft {
     padding: 20px 30px 20px 30px;
   }
+}
+
+.paypal-button {
+  padding-top: 50px;
+
+  text-align: center;
 }
