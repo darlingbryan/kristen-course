@@ -25,11 +25,10 @@ const useStyles = makeStyles((theme) => ({
   headTextContainer: {
     paddingBottom: "20px",
   },
-  textContainer: {
-    paddingLeft: "16px",
-  },
+
   text: {
     fontFamily: '"Nunito Sans", sans-serif',
+    paddingBottom: "20px",
   },
 }))
 
@@ -44,12 +43,12 @@ const Home = () => {
         justify="center"
         alignItems="center"
       >
-        <Grid item sm={12} className={classes.headTextContainer}>
+        <Grid item sm={8} className={classes.headTextContainer}>
           <Typography variant="h3" align="center">
-            Parenting Video Series
+            The Kids are Home Now What?
           </Typography>
         </Grid>
-        <Grid item sm={6} className="padMeLeft">
+        <Grid item sm={6} className="home-img home-section">
           <Paper elevation={false}>
             <img
               src={ParentImage}
@@ -58,15 +57,28 @@ const Home = () => {
             />
           </Paper>
         </Grid>
-        <Grid item sm={6} className="padMeRight">
-          <Typography variant="h5">The Kids are Home Now What?</Typography>
+        <Grid item sm={8} className="home-text home-section">
           <div className={classes.textContainer}>
-            <Typography variant="p" className={classes.text}>
-              Let’s face it; parenting is challenging, and we don’t always have
-              the tools that work, I needed more tools. What I found is, you
-              never will have all the answers, you will never feel “all good”
-              all the time, all we can do is try our best and be kind to
-              ourselves through this messy process of parenting.
+            <Typography variant="body1" className={classes.text}>
+              How are you going to help your family to thrive throughout the
+              next few months home all together?
+            </Typography>
+            <Typography variant="body1" className={classes.text}>
+              I am Kristen Ancker, your Parent Empowerment Specialist. I help
+              overwhelmed moms (and dads too<span>😊</span>) who are challenged
+              with power struggles, sibling fighting, defiance and chaos. I
+              guide parents to develop peace and understanding, to build healthy
+              relationships and gain cooperation and confidence with lots of
+              love, plenty of mistakes and grace in their role as mother/parent.
+            </Typography>
+            <Typography variant="body1" className={classes.text}>
+              With the use of positive discipline strategies, empathic
+              communication and Montessori home design, parents learn the
+              language to use to get their kids to cooperate and gain a positive
+              sense of self. These videos will guide families to create routines
+              together that work for the entire household. They will help you to
+              create a home environment that promotes creativity, fosters
+              independence, instills calm and invites JOY!
             </Typography>
           </div>
           <div className="paypal-button">

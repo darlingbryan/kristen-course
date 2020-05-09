@@ -8,6 +8,7 @@ import { Link } from "react-router-dom"
 import { CourseContext } from "../context/CourseState"
 import { Grid } from "@material-ui/core"
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline"
+import KristenLogo from "../assets/header-white.png"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,9 +50,10 @@ const Navbar = () => {
           <Grid container>
             <Grid item className="logoContainer" sm={8} xs={12}>
               <Link to="/">
-                <Typography variant="h3" className="logoText">
+                {/* <Typography variant="h3" className="logoText">
                   Kristen Ancker <span className={classes.ext}>MS Ed.</span>
-                </Typography>
+                </Typography> */}
+                <img src={KristenLogo} alt="logo" className="logo-img" />
               </Link>
             </Grid>
 
