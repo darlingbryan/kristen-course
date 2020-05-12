@@ -45,7 +45,7 @@ const Home = () => {
       >
         <Grid item sm={8} className={classes.headTextContainer}>
           <Typography variant="h3" align="center">
-            The Kids are Home Now What?
+            The Kids are Home! Now, What?
           </Typography>
         </Grid>
         <Grid item sm={6} className="home-img home-section">
