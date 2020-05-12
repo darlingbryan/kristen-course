@@ -8,6 +8,7 @@ import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
 import Button from "@material-ui/core/Button"
 import ButtonGroup from "@material-ui/core/ButtonGroup"
+import Link from "@material-ui/core/Link"
 
 import { CourseContext } from "../context/CourseState"
 import data from "../data"
@@ -62,6 +63,8 @@ const Course = () => {
     setCourse(currentCourseIndex + 1)
   }
 
+  let link = `https://drive.google.com/uc?id=${data[currentCourseIndex].pdfUrl}&export=download`
+
   return (
     <>
       <Grid container className={classes.courseContainer}>
@@ -80,9 +83,16 @@ const Course = () => {
                 <Typography gutterBottom variant="h5" component="h2">
                   {data[currentCourseIndex].title}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  Add link to pdf.
-                </Typography>
+
+                <Link href={link} download variant="body2">
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    Download pdf companion
+                  </Typography>
+                </Link>
               </CardContent>
             </CardActionArea>
             <CardActions>
