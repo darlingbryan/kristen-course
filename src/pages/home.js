@@ -47,6 +47,10 @@ const Home = () => {
           <Typography variant="h3" align="center">
             The Kids are Home! Now, What?
           </Typography>
+          <Typography variant="h5" align="center">
+            Learn Positive Discipline Hacks from a Montessori Mom <br /> to
+            Thrive at Home for only $27
+          </Typography>
         </Grid>
         <Grid item sm={6} className="home-img home-section">
           <Paper elevation={false}>
@@ -65,11 +69,15 @@ const Home = () => {
             </Typography>
             <Typography variant="body1" className={classes.text}>
               I am Kristen Ancker, your Parent Empowerment Specialist. I help
-              overwhelmed moms (and dads too<span>😊</span>) who are challenged
-              with power struggles, sibling fighting, defiance and chaos. I
-              guide parents to develop peace and understanding, to build healthy
-              relationships and gain cooperation and confidence with lots of
-              love, plenty of mistakes and grace in their role as mother/parent.
+              overwhelmed moms (and dads too
+              <span role="img" aria-label="smiley">
+                😊
+              </span>
+              ) who are challenged with power struggles, sibling fighting,
+              defiance and chaos. I guide parents to develop peace and
+              understanding, to build healthy relationships and gain cooperation
+              and confidence with lots of love, plenty of mistakes and grace in
+              their role as mother/parent.
             </Typography>
             <Typography variant="body1" className={classes.text}>
               With the use of positive discipline strategies, empathic
